@@ -19,6 +19,7 @@ public class BaseTest {
     @BeforeTest(alwaysRun=true)
     public void setUp(String browserName){
        driver=createDriver(browserName);
+       System.out.println("HashCode od driver is :"+driver.hashCode());
        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://crio-qkart-frontend-qa.vercel.app/");
     }

@@ -8,8 +8,16 @@
             <class name="Tests.TestClass"/>
 
         </classes>
+
     </test> <!-- Test -->
-    <test thread-count="2" name="FireFoxDriver">
+    <test thread-count="2" name="FireFoxDriver1">
+        <parameter name="browserName" value="firefox"/>
+        <classes>
+            <class name="Tests.TestClass"/>
+
+        </classes>
+    </test>
+    <test thread-count="2" name="FireFoxDriver2">
         <parameter name="browserName" value="firefox"/>
         <classes>
             <class name="Tests.TestClass"/>

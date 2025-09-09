@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
+import static Utils.SeleniumUtils.*;
 
 public class TestClass extends BaseTest{
 
@@ -31,7 +32,7 @@ public class TestClass extends BaseTest{
     }
 
 
-    @Test(description="Login to the application",enabled=false)
+    @Test(description="Login to the application",enabled=true)
     public void testCase(){
         boolean status;
         status=hm.verifyRegisterPageNavigation();
@@ -42,11 +43,11 @@ public class TestClass extends BaseTest{
         status=rp.makeReservation(userName,password);
         Assert.assertTrue(status,"Registration is failed");
     }
-    @Test(description="open new window and pass currentUrl")
+    @Test(description="open new window and pass currentUrl",enabled=false)
     public void testCase01() throws InterruptedException {
         String url=driver.getCurrentUrl();
         System.out.println(url);
-
+        takeScreenshot(driver);
         driver.findElement(By.linkText("Privacy policy")).click();
         WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.numberOfWindowsToBe(2));
